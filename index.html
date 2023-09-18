@@ -72,16 +72,22 @@
         ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند تا مرحله طراحی و
         صفحه‌بندی را به پایان برند.
       </p>
-      <div class="device-pixel-ratio">
-        device-pixel-ratio:
-        <span></span>
-      </div>
+      <ul class="screen-js" dir="ltr">
+        <li>device-pixel-ratio:<span></span></li>
+        <li>Screen width: <span>width</span></li>
+        <li>Screen height: <span></span></li>
+        <li>Screen availWidth: <span></span></li>
+        <li>Screen availHeight: <span></span></li>
+      </ul>
     </main>
     <script>
-      const devicePixelRatio = document.querySelector(
-        '.device-pixel-ratio > span',
-      );
-      devicePixelRatio.textContent = window.devicePixelRatio;
+      const screen = document.querySelectorAll('.screen-js > li > span');
+      console.log(window.screen);
+      screen[0].textContent = window.devicePixelRatio;
+      screen[1].textContent = window.screen.width;
+      screen[2].textContent = window.screen.height;
+      screen[3].textContent = window.screen.availWidth;
+      screen[4].textContent = window.screen.availHeight;
     </script>
   </body>
 </html>
